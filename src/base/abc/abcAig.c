@@ -33,7 +33,7 @@ long int global_level_updates = 0;
 long int global_reverse_updates = 0;
 long int global_node_rewritten = 0; 
 long int global_reorder_nodes = 0;
-
+long int max_aff_size = 0; 
 
  
 
@@ -1517,13 +1517,17 @@ int Abc_AigReplaceUpdateAff( Abc_Aig_t * pMan ){
     List_Ptr_Node_t * oNodeFirst, * newOrder;
     List_Ptr_t * oList = Abc_AigGetOList(pMan);
     int i; 
-
+    
     // verify input parameters
     if ( pMan == NULL || oList == NULL )
         return 0;
     if ( pMan->vTopoAff == NULL || Vec_PtrSize(pMan->vTopoAff) == 0 )
         return 1; // nothing to update
     oNodeFirst = pMan->oList->pCurItera;    
+    
+    if (Vec_PtrSize(pMan->vTopoAff) > max_aff_size)
+        max_aff_size = Vec_PtrSize(pMan->vTopoAff); 
+
     // update the topological order of the nodes in the affected vector 
     Vec_PtrForEachEntry(Abc_Obj_t*, pMan->vTopoAff, pNode, i){ 
         if (pNode == NULL)

@@ -35,6 +35,7 @@ extern long int global_level_updates;
 extern long int global_reverse_updates;
 extern long int global_node_rewritten; 
 extern long int global_reorder_nodes;
+extern long int max_aff_size; 
 /*
     The ideas realized in this package are inspired by the paper:
     Per Bjesse, Arne Boralv, "DAG-aware circuit compression for 
@@ -96,7 +97,7 @@ int Abc_NtkRewrite( Abc_Ntk_t * pNtk, int fUpdateLevel, int fUseZeros, int fVerb
     global_reverse_updates = 0;
     global_node_rewritten = 0;
     global_reorder_nodes = 0;
-
+    max_aff_size = 0; 
 /*
     {
         Vec_Vec_t * vParts;
@@ -266,6 +267,7 @@ Rwr_ManAddTimeTotal( pManRwr, Abc_Clock() - clkStart );
     printf("###global_reverse_updates \t %ld\n",  global_reverse_updates);   
     printf("###global_node_rewritten \t %ld\n",   global_node_rewritten);       
     printf("###global_reorder_nodes \t %ld\n",    global_reorder_nodes);
+    printf("###max_aff_size \t %ld\n",            max_aff_size);
 
     // print stats
     pManRwr->nNodesEnd = Abc_NtkNodeNum(pNtk);
