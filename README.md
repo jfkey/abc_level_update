@@ -2,6 +2,22 @@
 [![.github/workflows/build-windows.yml](https://github.com/berkeley-abc/abc/actions/workflows/build-windows.yml/badge.svg)](https://github.com/berkeley-abc/abc/actions/workflows/build-windows.yml)
 [![.github/workflows/build-posix-cmake.yml](https://github.com/berkeley-abc/abc/actions/workflows/build-posix-cmake.yml/badge.svg)](https://github.com/berkeley-abc/abc/actions/workflows/build-posix-cmake.yml)
 
+
+# boundLM: Development Prototype
+
+> ⚠️ **Note:** This repository contains the **development and prototyping history** for the boundLM algorithm. 
+
+## About This Repo
+This repository hosts the experimental code and raw scripts used during the initial development of **boundLM** (Bounded Dynamic Level Maintenance). It includes:
+- Prototype implementations of `dynTO` (Dynamic Topological Order), `dynLev`, and `dynRL`.
+- Experimental scripts for validating correctness and collecting raw performance data.
+- Comparison baselines (lazy update, etc.).
+
+## Citation
+If you are looking for the code corresponding to our paper **"Bounded Dynamic Level Maintenance for Efficient Logic Optimization"**, please refer to the [official fork](https://github.com/jfkey/abc/tree/feature/boundls).
+
+
+
 # ABC: System for Sequential Logic Synthesis and Formal Verification
 
 ABC is always changing but the current snapshot is believed to be stable.
